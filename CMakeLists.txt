@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
 if(CMAKE_VERSION VERSION_GREATER 3.0)
     CMAKE_POLICY(SET CMP0048 NEW)
 endif()
@@ -246,7 +246,7 @@ install(
 install(
     DIRECTORY "$<TARGET_PROPERTY:tree-lib,INTERFACE_INCLUDE_DIRECTORIES>"
     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
-    FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp"
+    FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp" PATTERN "*.hpp.inc" PATTERN "*.cpp.inc"
 )
 
 # Install the generator tool only if this is the toplevel project.

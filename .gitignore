@@ -91,3 +91,4 @@ library/**/*_swig*
 .idea/
 cmake-build-*/
 venv/
+/test_package/CMakeUserPresets.json
