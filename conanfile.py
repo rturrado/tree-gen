@@ -1,7 +1,6 @@
 import os
 from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
-from conan.tools.files import copy
 
 
 class TreeGenConan(ConanFile):
@@ -40,7 +39,9 @@ class TreeGenConan(ConanFile):
 
     def package(self):
         cmake = CMake(self)
+        self.copy(pattern="tree-gen-utility.cmake", src=os.path.join(self.source_folder, "cmake"), dst=os.path.join(self.package_folder, "cmake"))
         cmake.install()
 
     def package_info(self):
+        self.cpp_info.set_property("cmake_build_modules", [os.path.join("cmake", "tree-gen-utility.cmake")])
         self.cpp_info.libs = ["tree-lib"]
