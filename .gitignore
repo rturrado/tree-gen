@@ -92,3 +92,8 @@ library/**/*_swig*
 cmake-build-*/
 venv/
 /test_package/CMakeUserPresets.json
+/CMakeUserPresets.json
+/conan.lock
+/conanbuildinfo.txt
+/conaninfo.txt
+/graph_info.json

@@ -15,7 +15,6 @@ function(generate_tree TREE-GEN-BINARY TREE HDR SRC)
     add_custom_command(
         COMMAND "${TREE-GEN-BINARY}" "${TREE}" "${HDR}" "${SRC}"
         OUTPUT "${HDR}" "${SRC}"
-        #DEPENDS "${TREE}" tree-gen
     )
 endfunction()
 
@@ -38,6 +37,5 @@ function(generate_tree_py TREE-GEN-BINARY TREE HDR SRC PY)
     add_custom_command(
         COMMAND "${TREE-GEN-BINARY}" "${TREE}" "${HDR}" "${SRC}" "${PY}"
         OUTPUT "${HDR}" "${SRC}" "${PY}"
-        #DEPENDS "${TREE}" tree-gen
     )
 endfunction()
