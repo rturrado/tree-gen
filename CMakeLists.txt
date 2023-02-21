@@ -217,7 +217,7 @@ if (${CMAKE_PROJECT_NAME} STREQUAL tree-gen)
     install(
         DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-        FILES_MATCHING PATTERN "*.hpp"
+        FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp" PATTERN "*.hpp.inc" PATTERN "*.cpp.inc"
     )
 endif()
 
